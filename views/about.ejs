@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <style>
+    /* Custom CSS styles */
+    .about-image {
+      width: 100%;
+      max-width: auto; /* Adjust this value as needed */
+      height: auto;
+      display: block;
+    }
+
+    .about-content {
+      margin-left: 10px;
+    }
+
+    .about-content p {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #280404c7; /* Adjust the color as needed */
+    }
+  </style>
+</head>
+
+<body tabindex="-1">
+  <!-- Include navbar partial -->
+  <% include('partials/navbar', { page: '/about' }) %>
+
+  <div class="container mx-auto">
+    <div class="hero bg-base-200 rounded-lg p-6">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">About</h1>
+          <p class="py-6">Everything you want to know about me - the designer &amp; developer.</p>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <div>
+        <!-- Image with 16:9 aspect ratio -->
+        <img class="about-image" src="abt.jpg" alt="About Me" />
+      </div>
+      <div class="about-content">
+        <p class="py-6">
+
+Hello! I'm Daisy, currently enrolled in Computer Programming at Seneca College.
+ My deep interest in technology and computers has driven me to explore coding and software development.
+  With expertise in website building and a solid grasp of programming,
+    I'm always on the lookout for new challenges and chances to develop personally and professionally.
+ Join me on my journey through programming, web development, and more!
+        </p>
+        <p>
+          Beyond my academic , I have a fervent enthusiasm for delving into diverse cultures. 
+          Exploring new destinations allows me to broaden my horizons and celebrate the beauty of differences.
+           Whether it involves tasting street fare in bustling markets or enjoying meals at upscale establishments, 
+          I find immense pleasure in the culinary adventures that accompany my travels.
+        </p>
+        <p>
+          Additionally, I have a deep interest in arts and creativity. 
+          During my spare time, you'll often find me exploring photography, sketching, or experimenting with other forms of artistic expression.
+           Engaging in these creative pursuits helps me relax and unwind, while also fueling my imagination and encouraging innovation in my work.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
