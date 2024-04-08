@@ -1,4 +1,3 @@
-<!-- 404.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +8,7 @@
   <link rel="stylesheet" href="/css/main.css">
 </head>
 
-<body tabindex="-1">
+<body>
   <!-- Include navbar partial -->
   <% include('partials/navbar', { page: '/404' }) %>
 
@@ -19,7 +18,9 @@
         <div class="max-w-md">
           <h1 class="text-5xl font-bold">404</h1>
           <p class="py-6">Oops! Looks like the page you're looking for does not exist.</p>
-          <p class="pb-4"><%= message %></p>
+          <% if (typeof message !== 'undefined') { %>
+            <p class="pb-4"><%= message %></p>
+          <% } %>
           <a href="/" class="btn btn-primary">Go Home</a>
         </div>
       </div>
