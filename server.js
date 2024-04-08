@@ -1,27 +1,17 @@
 /********************************************************************************
-
-* WEB322 – Assignment 04
-
-*
-
-* I declare that this assignment is my own work in accordance with Seneca's
-
-* Academic Integrity Policy:
-
-*
-
-* https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
-
-*
-
-* Name: Daisy Bansal Student ID: 139405229 Date: 22/03/2024
-
-*
-
-* Published URL: https://busy-erin-reindeer-cap.cyclic.app
-*
-
-********************************************************************************/
+ * WEB322 – Assignment 05
+ *
+ * I declare that this assignment is my own work in accordance with Seneca's
+ * Academic Integrity Policy:
+ *
+ * https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+ *
+ * Name: Daisy Bansal
+ * Student ID: 139405229
+ * Date: 07/04/2024
+ *
+ * Published URL: https://ruby-spotless-greyhound.cyclic.app
+ ********************************************************************************/
 
 const express = require('express');
 const path = require('path');
