@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f0f0; /* Light gray background */
+    }
+
+    /* Container Styles */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Form Container Styles */
+    .form-container {
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      width: 400px;
+    }
+
+    /* Form Title Styles */
+    .form-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #333333; /* Dark gray color */
+      margin-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    /* Form Table Styles */
+    .form-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    /* Table Row Styles */
+    .form-table tr {
+      border-bottom: 2px solid #dddddd;
+    }
+
+    /* Table Header Styles */
+    .form-table th {
+      text-align: left;
+      padding: 10px 0;
+      color: #555555; /* Gray color */
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    /* Table Data Styles */
+    .form-table td {
+      padding: 10px 0;
+    }
+
+    /* Input Styles */
+    .input-field {
+      width: calc(100% - 20px);
+      padding: 12px;
+      border-radius: 8px;
+      border: 2px solid #dddddd;
+      font-size: 1rem;
+      transition: border-color 0.3s ease; /* Smooth transition */
+    }
+
+    /* Input Focus Styles */
+    .input-field:focus {
+      outline: none;
+      border-color: #5c94fc; /* Light blue color on focus */
+    }
+
+    /* Button Styles */
+    .btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background-color: #5c94fc; /* Light blue color */
+      color: #ffffff; /* White color */
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease; /* Smooth transition */
+    }
+
+    /* Button Hover Styles */
+    .btn:hover {
+      background-color: #2e6ae3; /* Darker blue color on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h2 class="form-title">Login</h2>
+      <form action="/login" method="POST">
+        <table class="form-table">
+          <tr>
+            <th>User Name</th>
+            <td><input type="text" name="userName" class="input-field" placeholder="Enter your user name" required></td>
+          </tr>
+          <tr>
+            <th>Password</th>
+            <td><input type="password" name="password" class="input-field" placeholder="Enter your password" required></td>
+          </tr>
+        </table>
+        <button type="submit" class="btn">Login</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

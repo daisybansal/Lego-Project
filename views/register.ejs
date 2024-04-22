@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    /* Styles for the container */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #24243b; /* Dark purple background */
+    }
+
+    /* Styles for the card */
+    .card {
+      max-width: 400px;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Shadow effect */
+      background-color: #1c1c35; /* Dark blue background */
+    }
+
+    /* Styles for the card title */
+    .card h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #f8f8f8; /* White color */
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Styles for form controls */
+    .form-control {
+      margin-bottom: 30px;
+    }
+
+    /* Styles for labels */
+    .label-text {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #f8f8f8; /* White color */
+    }
+
+    /* Styles for input fields */
+    .input {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      color: #f8f8f8; /* White color */
+      background-color: #38385e; /* Dark purple background */
+      box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2); /* Inner shadow effect */
+    }
+
+    /* Styles for the submit button */
+    .btn {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background-color: #4e5bff; /* Blue color */
+      color: #f8f8f8; /* White color */
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease; /* Smooth transition */
+    }
+
+    /* Styles for the submit button on hover */
+    .btn:hover {
+      background-color: #3241e0; /* Darker blue on hover */
+    }
+
+    /* Styles for alerts */
+    .alert {
+      padding: 20px;
+      background-color: #ff3d3d; /* Red color */
+      color: #f8f8f8; /* White color */
+      border-radius: 10px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* Styles for success message */
+    .success-message {
+      color: #00ff00; /* Green color */
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <% include('partials/navbar', { page: 'register' }) %>
+  
+  <div class="container">
+    <div class="max-w-md">
+      <% if(typeof successMessage !== 'undefined') { %>
+        <div class="success-message">
+          <span><%= successMessage %></span>
+        </div>
+        <a href="/login" class="btn">Proceed to Log in</a>
+      <% } else { %>
+        <form action="/register" method="POST" class="card">
+          <h2>Register</h2>
+          <% if(typeof errorMessage !== 'undefined') { %>
+            <div class="alert">
+              <span><%= errorMessage %></span>
+            </div>
+          <% } %>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">User Name</span>
+            </label>
+            <input type="text" name="userName" placeholder="User Name" required class="input">
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Password</span>
+            </label>
+            <input type="password" name="password" placeholder="Password" required class="input">
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Confirm Password</span>
+            </label>
+            <input type="password" name="password2" placeholder="Confirm Password" required class="input">
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Email Address</span>
+            </label>
+            <input type="email" name="email" placeholder="Email Address" required class="input">
+          </div>
+          <button type="submit" class="btn">Register</button>
+        </form>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>
