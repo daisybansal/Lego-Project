@@ -5,15 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <style>
-    /* Global Styles */
-    body {
+    /* Resetting default margin and padding */
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f0f0; /* Light gray background */
+      box-sizing: border-box;
     }
 
-    /* Container Styles */
+    /* Body styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #1F2833;
+      color: #fff;
+    }
+
+    /* Container styles */
     .container {
       display: flex;
       justify-content: center;
@@ -21,103 +27,100 @@
       height: 100vh;
     }
 
-    /* Form Container Styles */
-    .form-container {
-      background-color: #ffffff;
+    /* Card styles */
+    .card {
+      background-color: #45A29E;
       border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
       padding: 40px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
       width: 400px;
     }
 
-    /* Form Title Styles */
-    .form-title {
-      font-size: 2.5rem;
+    /* Form styles */
+    .form-control {
+      margin-bottom: 20px;
+    }
+
+    .label-text {
       font-weight: bold;
-      color: #333333; /* Dark gray color */
-      margin-bottom: 20px;
-      text-align: center;
-      text-transform: uppercase;
+      color: #fff;
     }
 
-    /* Form Table Styles */
-    .form-table {
+    .input {
       width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-
-    /* Table Row Styles */
-    .form-table tr {
-      border-bottom: 2px solid #dddddd;
-    }
-
-    /* Table Header Styles */
-    .form-table th {
-      text-align: left;
-      padding: 10px 0;
-      color: #555555; /* Gray color */
-      text-transform: uppercase;
-      font-size: 0.9rem;
-    }
-
-    /* Table Data Styles */
-    .form-table td {
-      padding: 10px 0;
-    }
-
-    /* Input Styles */
-    .input-field {
-      width: calc(100% - 20px);
       padding: 12px;
-      border-radius: 8px;
-      border: 2px solid #dddddd;
-      font-size: 1rem;
-      transition: border-color 0.3s ease; /* Smooth transition */
+      border: 1px solid #1F2833;
+      border-radius: 10px;
+      transition: border-color 0.3s ease;
+      background-color: #C4C4C4;
+      color: #333;
     }
 
-    /* Input Focus Styles */
-    .input-field:focus {
-      outline: none;
-      border-color: #5c94fc; /* Light blue color on focus */
+    .input:focus {
+      border-color: #66FCF1;
     }
 
-    /* Button Styles */
     .btn {
+      display: block;
       width: 100%;
-      padding: 14px;
+      background-color: #66FCF1;
+      color: #1F2833;
+      padding: 12px;
       border: none;
-      border-radius: 8px;
-      background-color: #5c94fc; /* Light blue color */
-      color: #ffffff; /* White color */
-      font-size: 1.1rem;
-      font-weight: bold;
+      border-radius: 10px;
       cursor: pointer;
-      transition: background-color 0.3s ease; /* Smooth transition */
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      text-align: center;
     }
 
-    /* Button Hover Styles */
     .btn:hover {
-      background-color: #2e6ae3; /* Darker blue color on hover */
+      background-color: #45A29E;
+    }
+
+    /* Alert styles */
+    .alert {
+      background-color: #F9C74F;
+      color: #1F2833;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .alert-error {
+      background-color: #EF476F;
+      color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="form-container">
-      <h2 class="form-title">Login</h2>
-      <form action="/login" method="POST">
-        <table class="form-table">
-          <tr>
-            <th>User Name</th>
-            <td><input type="text" name="userName" class="input-field" placeholder="Enter your user name" required></td>
-          </tr>
-          <tr>
-            <th>Password</th>
-            <td><input type="password" name="password" class="input-field" placeholder="Enter your password" required></td>
-          </tr>
-        </table>
-        <button type="submit" class="btn">Login</button>
+  <% include('partials/navbar', { page: 'login' }) %>
+  
+  <div class="container mx-auto">
+    <div class="max-w-md mx-auto mt-6">
+      <form action="/login" method="POST" class="card shadow-md p-6">
+        <h2 class="text-xl font-semibold mb-4">Login</h2>
+        <% if(errorMessage) { %>
+          <div class="alert alert-error">
+            <span><%= errorMessage %></span>
+          </div>
+        <% } %>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">User Name</span>
+          </label>
+          <input type="text" name="userName" placeholder="User Name" required class="input">
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Password</span>
+          </label>
+          <input type="password" name="password" placeholder="Password" required class="input">
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Login</button>
       </form>
     </div>
   </div>

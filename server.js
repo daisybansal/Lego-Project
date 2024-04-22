@@ -6,11 +6,11 @@
  *
  * https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
  *
- * Name: Manan
- * Student ID: 
- * Date: 20/04/2024
+ * Name: Daisy Bansal
+ * Student ID: 139405229
+ * Date: 07/04/2024
  *
- * Published URL: https://ruby-spotless-greyhound.cyclic.app
+ * Published URL: https://busy-erin-reindeer-cap.cyclic.app
  ********************************************************************************/
 
 const express = require('express');
@@ -21,19 +21,21 @@ const clientSessions = require('client-sessions');
 const app = express();
 const HTTP_PORT = process.env.PORT || 8080;
 
+
 // Middleware
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true })); // Middleware for parsing URL-encoded form data
 app.use(clientSessions({
   cookieName: 'session',
-  secret: 'random_secret_string',
-  duration: 24 * 60 * 60 * 1000,
-  activeDuration: 1000 * 60 * 5
+  secret: 'random_secret_string', // Change this to a secure random string
+  duration: 24 * 60 * 60 * 1000, // 24 hours in milliseconds
+  activeDuration: 1000 * 60 * 5 // 5 minutes in milliseconds
 }));
 app.use((req, res, next) => {
   res.locals.session = req.session;
   next();
 });
+
 app.set('view engine', 'ejs');
 
 // Function to fetch random quote
@@ -152,7 +154,11 @@ app.get('/lego/deleteSet/:num', async (req, res) => {
   }
 });
 
-
+// Custom error handling middleware for other errors
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).render('500', { message: 'Internal Server Error' });
+});
 
 // Route to render the login view
 app.get('/login', (req, res) => {
@@ -215,11 +221,6 @@ function ensureLogin(req, res, next) {
 }
 
 
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).render('500', { message: 'Internal Server Error' });
-});
-
 // Initialize database and start servers
 legoData.initialize()
   .then(authData.initialize)
@@ -232,4 +233,7 @@ legoData.initialize()
     console.error('Error initializing database:', error);
   });
 
+  
+
 module.exports = app;
+

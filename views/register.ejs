@@ -5,137 +5,154 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register</title>
   <link rel="stylesheet" href="/css/main.css">
-  <style>
-    /* Styles for the container */
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #24243b; /* Dark purple background */
-    }
+<style>
+  /* Resetting default margin and padding */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    /* Styles for the card */
-    .card {
-      max-width: 400px;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Shadow effect */
-      background-color: #1c1c35; /* Dark blue background */
-    }
+  /* Body styles */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #8E2DE2, #4A00E0);
+    color: #fff;
+  }
 
-    /* Styles for the card title */
-    .card h2 {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #f8f8f8; /* White color */
-      text-align: center;
-      margin-bottom: 30px;
-    }
+  /* Container styles */
+  .container {
+    padding: 20px;
+  }
 
-    /* Styles for form controls */
-    .form-control {
-      margin-bottom: 30px;
-    }
+  /* Navbar styles */
+  .navbar {
+    background-color: #FF416C;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
 
-    /* Styles for labels */
-    .label-text {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #f8f8f8; /* White color */
-    }
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+  }
 
-    /* Styles for input fields */
-    .input {
-      width: 100%;
-      padding: 15px;
-      border: none;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      color: #f8f8f8; /* White color */
-      background-color: #38385e; /* Dark purple background */
-      box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2); /* Inner shadow effect */
-    }
+  /* Card styles */
+  .card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
 
-    /* Styles for the submit button */
-    .btn {
-      width: 100%;
-      padding: 15px;
-      border: none;
-      border-radius: 10px;
-      background-color: #4e5bff; /* Blue color */
-      color: #f8f8f8; /* White color */
-      font-size: 1.2rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease; /* Smooth transition */
-    }
+  /* Form styles */
+  .form-control {
+    margin-bottom: 30px;
+  }
 
-    /* Styles for the submit button on hover */
-    .btn:hover {
-      background-color: #3241e0; /* Darker blue on hover */
-    }
+  .label-text {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
 
-    /* Styles for alerts */
-    .alert {
-      padding: 20px;
-      background-color: #ff3d3d; /* Red color */
-      color: #f8f8f8; /* White color */
-      border-radius: 10px;
-      margin-bottom: 30px;
-      text-align: center;
-    }
+  .input {
+    width: calc(100% - 24px);
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+  }
 
-    /* Styles for success message */
-    .success-message {
-      color: #00ff00; /* Green color */
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-  </style>
+  .input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: #FF416C;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #DB2763;
+  }
+
+  /* Alert styles */
+  .alert {
+    background-color: #FF4B2B;
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+  }
+
+  .success-message {
+    background-color: #06D6A0;
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+  }
+</style>
 </head>
 <body>
   <% include('partials/navbar', { page: 'register' }) %>
   
-  <div class="container">
-    <div class="max-w-md">
+  <div class="container mx-auto">
+    <div class="max-w-md mx-auto mt-6">
       <% if(typeof successMessage !== 'undefined') { %>
         <div class="success-message">
           <span><%= successMessage %></span>
         </div>
         <a href="/login" class="btn">Proceed to Log in</a>
       <% } else { %>
-        <form action="/register" method="POST" class="card">
-          <h2>Register</h2>
+        <form action="/register" method="POST" class="card shadow-md p-6">
+          <h2 class="text-2xl font-semibold mb-4">Register</h2>
           <% if(typeof errorMessage !== 'undefined') { %>
             <div class="alert">
               <span><%= errorMessage %></span>
             </div>
           <% } %>
           <div class="form-control">
-            <label class="label">
-              <span class="label-text">User Name</span>
+            <label class="label-text">
+              User Name
             </label>
-            <input type="text" name="userName" placeholder="User Name" required class="input">
+            <input type="text" name="userName" placeholder="Enter your User Name" required class="input">
           </div>
           <div class="form-control">
-            <label class="label">
-              <span class="label-text">Password</span>
+            <label class="label-text">
+              Password
             </label>
-            <input type="password" name="password" placeholder="Password" required class="input">
+            <input type="password" name="password" placeholder="Enter your Password" required class="input">
           </div>
           <div class="form-control">
-            <label class="label">
-              <span class="label-text">Confirm Password</span>
+            <label class="label-text">
+              Confirm Password
             </label>
-            <input type="password" name="password2" placeholder="Confirm Password" required class="input">
+            <input type="password" name="password2" placeholder="Confirm your Password" required class="input">
           </div>
           <div class="form-control">
-            <label class="label">
-              <span class="label-text">Email Address</span>
+            <label class="label-text">
+              Email Address
             </label>
-            <input type="email" name="email" placeholder="Email Address" required class="input">
+            <input type="email" name="email" placeholder="Enter your Email Address" required class="input">
           </div>
           <button type="submit" class="btn">Register</button>
         </form>
