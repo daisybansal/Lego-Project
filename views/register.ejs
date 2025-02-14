@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="/css/main.css">
+<style>
+  /* Resetting default margin and padding */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Body styles */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #8E2DE2, #4A00E0);
+    color: #fff;
+  }
+
+  /* Container styles */
+  .container {
+    padding: 20px;
+  }
+
+  /* Navbar styles */
+  .navbar {
+    background-color: #FF416C;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+
+  /* Card styles */
+  .card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Form styles */
+  .form-control {
+    margin-bottom: 30px;
+  }
+
+  .label-text {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+  .input {
+    width: calc(100% - 24px);
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    font-size: 1.1em;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  .btn {
+    display: inline-block;
+    background-color: #FF416C;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #DB2763;
+  }
+
+  /* Alert styles */
+  .alert {
+    background-color: #FF4B2B;
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+  }
+
+  .success-message {
+    background-color: #06D6A0;
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+  }
+</style>
+</head>
+<body>
+  <% include('partials/navbar', { page: 'register' }) %>
+  
+  <div class="container mx-auto">
+    <div class="max-w-md mx-auto mt-6">
+      <% if(typeof successMessage !== 'undefined') { %>
+        <div class="success-message">
+          <span><%= successMessage %></span>
+        </div>
+        <a href="/login" class="btn">Proceed to Log in</a>
+      <% } else { %>
+        <form action="/register" method="POST" class="card shadow-md p-6">
+          <h2 class="text-2xl font-semibold mb-4">Register</h2>
+          <% if(typeof errorMessage !== 'undefined') { %>
+            <div class="alert">
+              <span><%= errorMessage %></span>
+            </div>
+          <% } %>
+          <div class="form-control">
+            <label class="label-text">
+              User Name
+            </label>
+            <input type="text" name="userName" placeholder="Enter your User Name" required class="input">
+          </div>
+          <div class="form-control">
+            <label class="label-text">
+              Password
+            </label>
+            <input type="password" name="password" placeholder="Enter your Password" required class="input">
+          </div>
+          <div class="form-control">
+            <label class="label-text">
+              Confirm Password
+            </label>
+            <input type="password" name="password2" placeholder="Confirm your Password" required class="input">
+          </div>
+          <div class="form-control">
+            <label class="label-text">
+              Email Address
+            </label>
+            <input type="email" name="email" placeholder="Enter your Email Address" required class="input">
+          </div>
+          <button type="submit" class="btn">Register</button>
+        </form>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>

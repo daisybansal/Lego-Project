@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User History</title>
+  <link rel="stylesheet" href="/css/main.css">
+  
+</head>
+<body>
+  <% include('partials/navbar', { page: 'userHistory' }) %>
+  
+  <div class="container mx-auto">
+    <div class="hero bg-base-200 rounded-lg">
+      <div class="hero-content">
+        <div class="max-w-md">
+          <h1>User History</h1>
+          <% if(session.user) { %>
+            <div class="user-info">
+              <p>Welcome, <%= session.user.userName %></p>
+              <p>Email: <%= session.user.email %></p>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <% if(session.user && session.user.loginHistory.length > 0) { %>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Login Date/Time</th>
+            <th>Client Information</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% session.user.loginHistory.forEach(entry => { %>
+            <tr>
+              <td><%= entry.dateTime %></td>
+              <td><%= entry.userAgent %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p class="no-history">No login history available.</p>
+    <% } %>
+  </div>
+</body>
+</html>
