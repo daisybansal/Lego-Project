@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lego Collection</title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+
+<body tabindex="-1">
+  <div class="navbar" style="background-color: #000000 !important;">
+    <div class="flex-1">
+      <a class="btn btn-ghost normal-case text-xl" style="color: white !important;" href="/">Lego Collection</a>
+    </div>
+    
+    <div class="flex-none" style="margin-right: 50px;">
+      <ul class="menu menu-horizontal gap-6">
+        <li><a style="color: white !important;" href="/about">About</a></li>
+        <li><a style="color: white !important;" href="/lego/addSet">Add Set</a></li>
+        <li>
+          <details>
+            <summary style="color: white !important;">Theme</summary>
+            <ul class="p-2" style="background-color: #000000 !important;">
+              <li><a style="color: white !important;" href="/lego/sets?theme=technic">Technic</a></li>
+              <li><a style="color: white !important;" href="/lego/sets?theme=classic town">Classic Town</a></li>
+              <li><a style="color: white !important;" href="/lego/sets?theme=supplemental">Supplemental</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+
+      <div class="dropdown">
+        <label tabindex="0" class="btn btn-ghost sm:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" style="color: white !important;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content right-0 mt-3 z-[1] p-2 shadow rounded-box w-52" style="background-color: #000000 !important;">
+          <li><a style="color: white !important;" href="/about">About</a></li>
+          <li>
+            <details>
+              <summary style="color: white !important;">Theme</summary>
+              <ul class="p-2" style="background-color: #000000 !important;">
+                <li><a style="color: white !important;" href="/lego/sets?theme=technic">Technic</a></li>
+                <li><a style="color: white !important;" href="/lego/sets?theme=classic town">Classic Town</a></li>
+                <li><a style="color: white !important;" href="/lego/sets?theme=supplemental">Supplemental</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="container mx-auto">
+    <div class="hero bg-base-200 rounded-lg p-6">
+      <div class="hero-content text-center ">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">Explore The World Of Legos</h1>
+          <p class="py-6" style="color: rgb(24, 44, 62);">From Fantastical Castles to Galactic Adventures: Let LEGO Spark Your Creativity</p>
+          <a href="/lego/sets" class="btn btn-primary">Let's ROLL !!</a>
+        </div>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="container mx-auto px-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6 justify-items-center">
+        <div class="card bg-base-100 shadow-xl" style="width: 100%;">
+          <figure style="height: 180px;">
+            <img class="w-full h-full object-cover" src="https://cdn.rebrickable.com/media/sets/054-1.jpg" alt="Lego set" />
+          </figure>
+          <div class="card-body p-4">
+            <h2 class="text-sm font-semibold mb-2">Assorted Basic Bricks - Yellow</h2>
+            <div class="flex items-center justify-between text-xs text-gray-600">
+              <span>Year: 1966</span>
+              <span>Parts: 43</span>
+            </div>
+            <div class="card-actions justify-between mt-3">
+              <a href="/lego/sets/details/054-1" class="btn btn-primary btn-xs">VIEW DETAILS</a>
+              <a href="/lego/editSet/054-1" class="btn btn-primary btn-xs">EDIT</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl" style="width: 100%;">
+          <figure style="height: 180px;">
+            <img class="w-full h-full object-cover" src="https://cdn.rebrickable.com/media/sets/062-1.jpg" alt="Lego set" />
+          </figure>
+          <div class="card-body p-4">
+            <h2 class="text-sm font-semibold mb-2">Basic Building Set</h2>
+            <div class="flex items-center justify-between text-xs text-gray-600">
+              <span>Year: 1965</span>
+              <span>Parts: 57</span>
+            </div>
+            <div class="card-actions justify-between mt-3">
+              <a href="/lego/sets/details/062-1" class="btn btn-primary btn-xs">VIEW DETAILS</a>
+              <a href="/lego/editSet/062-1" class="btn btn-primary btn-xs">EDIT</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl" style="width: 100%;">
+          <figure style="height: 180px;">
+            <img class="w-full h-full object-cover" src="https://cdn.rebrickable.com/media/sets/060-1.jpg" alt="Lego set" />
+          </figure>
+          <div class="card-body p-4">
+            <h2 class="text-sm font-semibold mb-2">Classic Castle Set</h2>
+            <div class="flex items-center justify-between text-xs text-gray-600">
+              <span>Year: 1984</span>
+              <span>Parts: 200</span>
+            </div>
+            <div class="card-actions justify-between mt-3">
+              <a href="/lego/sets/details/060-1" class="btn btn-primary btn-xs">VIEW DETAILS</a>
+              <a href="/lego/editSet/060-1" class="btn btn-primary btn-xs">EDIT</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl" style="width: 100%;">
+          <figure style="height: 180px;">
+            <img class="w-full h-full object-cover" src="https://cdn.rebrickable.com/media/sets/053-1.jpg" alt="Lego Set" />
+          </figure>
+          <div class="card-body p-3">
+            <h2 class="text-sm font-semibold">Assorted Basic Bricks - Blue</h2>
+            <div class="flex items-center gap-2 text-xs text-gray-600">
+              <span>Year: 1966</span>
+              <span>Parts: 43</span>
+            </div>
+            <div class="card-actions mt-3">
+              <a href="/lego/sets/details/053-1" class="btn btn-primary btn-xs">VIEW DETAILS</a>
+              <a href="/lego/editSet/053-1" class="btn btn-primary btn-xs">EDIT</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl" style="width: 100%;">
+          <figure style="height: 180px;">
+            <img class="w-full h-full object-cover" src="https://cdn.rebrickable.com/media/sets/052-1.jpg" alt="Lego Set" />
+          </figure>
+          <div class="card-body p-3">
+            <h2 class="text-sm font-semibold">Assorted Basic Bricks - White</h2>
+            <div class="flex items-center gap-2 text-xs text-gray-600">
+              <span>Year: 1966</span>
+              <span>Parts: 43</span>
+            </div>
+            <div class="card-actions mt-3">
+              <a href="/lego/sets/details/052-1" class="btn btn-primary btn-xs">VIEW DETAILS</a>
+              <a href="/lego/editSet/052-1" class="btn btn-primary btn-xs">EDIT</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl" style="width: 100%;">
+          <figure style="height: 180px;">
+            <img class="w-full h-full object-cover" src="https://cdn.rebrickable.com/media/sets/055-1.jpg" alt="Lego Set" />
+          </figure>
+          <div class="card-body p-3">
+            <h2 class="text-sm font-semibold">Gears</h2>
+            <div class="flex items-center gap-2 text-xs text-gray-600">
+              <span>Year: 1965</span>
+              <span>Parts: 43</span>
+            </div>
+            <div class="card-actions mt-3">
+              <a href="/lego/sets/details/055-1" class="btn btn-primary btn-xs">VIEW DETAILS</a>
+              <a href="/lego/editSet/055-1" class="btn btn-primary btn-xs">EDIT</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl" style="width: 100%;">
+          <figure style="height: 180px;">
+            <img class="w-full h-full object-cover" src="https://cdn.rebrickable.com/media/sets/057-1.jpg" alt="Lego Set" />
+          </figure>
+          <div class="card-body p-3">
+            <h2 class="text-sm font-semibold">Castle 2 for 1 Bonus Offer</h2>
+            <div class="flex items-center gap-2 text-xs text-gray-600">
+              <span>Year: 1987</span>
+              <span>Parts: 0</span>
+            </div>
+            <div class="card-actions mt-3">
+              <a href="/lego/sets/details/057-1" class="btn btn-primary btn-xs">VIEW DETAILS</a>
+              <a href="/lego/editSet/057-1" class="btn btn-primary btn-xs">EDIT</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl" style="width: 100%;">
+          <figure style="height: 180px;">
+            <img class="w-full h-full object-cover" src="https://cdn.rebrickable.com/media/sets/058-1.jpg" alt="Lego Set" />
+          </figure>
+          <div class="card-body p-3">
+            <h2 class="text-sm font-semibold">Classic Castle</h2>
+            <div class="flex items-center gap-2 text-xs text-gray-600">
+              <span>Year: 1984</span>
+              <span>Parts: 200</span>
+            </div>
+            <div class="card-actions mt-3">
+              <a href="/lego/sets/details/058-1" class="btn btn-primary btn-xs">VIEW DETAILS</a>
+              <a href="/lego/editSet/058-1" class="btn btn-primary btn-xs">EDIT</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

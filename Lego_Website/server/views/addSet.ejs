@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Sets</title>
+  <link rel="stylesheet" href="/css/main.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('/css/images/bg-photo.jpg') center center/cover no-repeat fixed;
+      min-height: 100vh;
+      display: flex;           /* Added flex */
+      align-items: center;     /* Center vertically */
+      justify-content: center; /* Center horizontally */
+    }
+
+    .container {
+      max-width: 400px;
+      height: 450px;     /* Fixed height */
+      margin: 20px auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      color: #000000;
+      text-align: center;
+    }
+
+    form {
+      display: grid;
+      gap: 6px;         /* Reduced gap */
+    }
+
+    label {
+      font-weight: bold;
+      color: #333;
+      font-size: 13px;
+      margin-bottom: 1px; /* Minimal margin */
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="url"],
+    select {
+      width: 100%;
+      padding: 4px 6px;  /* Reduced padding */
+      border-radius: 4px;
+      border: 1px solid #000000;
+      box-sizing: border-box;
+      height: 25px;      /* Smaller height */
+      font-size: 13px;
+    }
+
+    button[type="submit"] {
+      background-color: #021e31;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 6px 12px;  /* Smaller padding */
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 6px;    /* Less margin */
+      height: 28px;       /* Smaller height */
+    }
+
+    button[type="submit"]:hover {
+      background-color: #2980b9; /* Darker blue on hover */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Render Navbar Partial -->
+  <% include('partials/navbar', { page: '/lego/addSet' }) %>
+
+  <!-- Remove the test image once background works -->
+  <!-- <img src="/css/images/bg-photo.jpg" alt="test"> -->
+
+  <!-- Form to Add a Set -->
+  <div class="container">
+    <h1>Add Set</h1>
+    <form action="/lego/addSet" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="year">Year:</label>
+      <input type="number" id="year" name="year" required>
+
+      <label for="num_parts">Number of Parts:</label>
+      <input type="number" id="num_parts" name="num_parts" required>
+
+      <label for="img_url">Image URL:</label>
+      <input type="url" id="img_url" name="img_url" required>
+
+      <label for="theme">Theme:</label>
+      <select id="theme" name="theme" required>
+        <option value="technic">Technic</option>
+        <!-- Add other theme options -->
+      </select>
+
+      <label for="set_num">Set Number:</label>
+      <input type="text" id="set_num" name="set_num" required>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Include JavaScript or other scripts -->
+  <script src="/server.js"></script>
+</body>
+
+</html>
